@@ -1,0 +1,1997 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="blush">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Мой бережный планер ✨</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="matcha"] {
+      --bg: #F2F5F1;
+      --bg-grad: radial-gradient(circle at 10% 10%, rgba(163, 198, 174, 0.35), transparent 45%), radial-gradient(circle at 90% 80%, rgba(212, 163, 115, 0.22), transparent 50%);
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-solid: #FFFFFF;
+      --surface-soft: rgba(235, 241, 236, 0.85);
+      --text: #252B27;
+      --text-muted: #6E7771;
+      --primary: #5A8268;
+      --primary-light: #DFECE3;
+      --accent: #C88A5B;
+      --danger: #D96B6B;
+      --border: rgba(44, 48, 46, 0.09);
+      --shadow: 0 12px 32px -6px rgba(45, 65, 52, 0.08), 0 4px 14px -2px rgba(45, 65, 52, 0.04);
+      --card-grad: linear-gradient(135deg, #4A6F58 0%, #7FA98E 55%, #C89B7B 100%);
+    }
+
+    [data-theme="blush"] {
+      --bg: #FDF6F7;
+      --bg-grad: radial-gradient(circle at 15% 15%, rgba(232, 181, 198, 0.38), transparent 45%), radial-gradient(circle at 85% 80%, rgba(196, 172, 224, 0.28), transparent 50%);
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-solid: #FFFFFF;
+      --surface-soft: rgba(248, 236, 239, 0.85);
+      --text: #382A2E;
+      --text-muted: #8C787E;
+      --primary: #C27D96;
+      --primary-light: #F9E6ED;
+      --accent: #9D84C7;
+      --danger: #E06C75;
+      --border: rgba(58, 46, 50, 0.09);
+      --shadow: 0 12px 32px -6px rgba(194, 125, 150, 0.14), 0 4px 14px -2px rgba(194, 125, 150, 0.06);
+      --card-grad: linear-gradient(135deg, #B56584 0%, #D69AB0 50%, #9E8BC7 100%);
+    }
+
+    [data-theme="ocean"] {
+      --bg: #F1F7F9;
+      --bg-grad: radial-gradient(circle at 10% 20%, rgba(142, 202, 230, 0.35), transparent 45%), radial-gradient(circle at 90% 85%, rgba(168, 218, 220, 0.3), transparent 50%);
+      --surface: rgba(255, 255, 255, 0.88);
+      --surface-solid: #FFFFFF;
+      --surface-soft: rgba(232, 243, 247, 0.88);
+      --text: #223038;
+      --text-muted: #6C7D87;
+      --primary: #4A8BA8;
+      --primary-light: #E0F0F7;
+      --accent: #E29578;
+      --danger: #E06C75;
+      --border: rgba(34, 48, 56, 0.09);
+      --shadow: 0 12px 32px -6px rgba(74, 139, 168, 0.12);
+      --card-grad: linear-gradient(135deg, #356E87 0%, #64A6C2 55%, #83C5BE 100%);
+    }
+
+    [data-theme="lavender"] {
+      --bg: #F6F4FA;
+      --bg-grad: radial-gradient(circle at 15% 15%, rgba(189, 178, 255, 0.32), transparent 45%), radial-gradient(circle at 85% 85%, rgba(255, 198, 255, 0.25), transparent 50%);
+      --surface: rgba(255, 255, 255, 0.86);
+      --surface-solid: #FFFFFF;
+      --surface-soft: rgba(238, 234, 247, 0.85);
+      --text: #2D2838;
+      --text-muted: #7C748C;
+      --primary: #7E6BC4;
+      --primary-light: #EAE5F9;
+      --accent: #D48C9E;
+      --danger: #E06C75;
+      --border: rgba(45, 40, 56, 0.09);
+      --shadow: 0 12px 32px -6px rgba(126, 107, 196, 0.14);
+      --card-grad: linear-gradient(135deg, #5F4BB6 0%, #9583D9 50%, #DF99B8 100%);
+    }
+
+    [data-theme="dark"] {
+      --bg: #131516;
+      --bg-grad: radial-gradient(circle at 15% 15%, rgba(114, 155, 132, 0.14), transparent 45%), radial-gradient(circle at 85% 80%, rgba(196, 139, 159, 0.12), transparent 50%);
+      --surface: rgba(30, 33, 34, 0.88);
+      --surface-solid: #1E2122;
+      --surface-soft: rgba(42, 46, 48, 0.9);
+      --text: #ECEAE4;
+      --text-muted: #959B97;
+      --primary: #8AB098;
+      --primary-light: rgba(138, 176, 152, 0.18);
+      --accent: #E0B083;
+      --danger: #E57373;
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+      --card-grad: linear-gradient(135deg, #2B3B32 0%, #445E50 50%, #6E5544 100%);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      background-image: var(--bg-grad);
+      background-attachment: fixed;
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 95px;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1, h2, .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 700; letter-spacing: -0.01em; }
+
+    /* Верхняя панель */
+    .topbar {
+      position: sticky; top: 0; z-index: 40;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 18px;
+      background: var(--surface);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .icon-btn {
+      background: var(--surface-solid); border: 1px solid var(--border); color: var(--text);
+      width: 40px; height: 40px; border-radius: 13px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; box-shadow: var(--shadow); font-size: 17px; transition: 0.15s;
+    }
+    .icon-btn:active { transform: scale(0.94); }
+    .topbar-title { font-size: 15.5px; font-weight: 700; }
+    .pomo-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: var(--primary-light); color: var(--primary);
+      padding: 7px 13px; border-radius: 99px; font-size: 13px; font-weight: 700;
+      cursor: pointer; border: none;
+    }
+
+    /* Боковое меню */
+    .drawer-backdrop {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(3px);
+      z-index: 90; opacity: 0; pointer-events: none; transition: opacity 0.28s;
+    }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer {
+      position: fixed; top: 0; left: 0; bottom: 0; width: 300px;
+      background: var(--surface-solid); z-index: 100;
+      transform: translateX(-100%); transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+      padding: 22px 16px; display: flex; flex-direction: column; justify-content: space-between;
+      box-shadow: 12px 0 40px rgba(0,0,0,0.18); overflow-y: auto;
+    }
+    .drawer.open { transform: translateX(0); }
+    .drawer-header { padding: 4px 10px 16px; border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+    .drawer-header h2 { font-size: 26px; }
+    .drawer-header p { font-size: 12px; color: var(--text-muted); }
+    .nav-list { display: flex; flex-direction: column; gap: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 11px; padding: 11px 13px;
+      border-radius: 13px; border: none; background: transparent; color: var(--text);
+      font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; transition: 0.18s; font-family: inherit;
+    }
+    .nav-item:hover { background: var(--surface-soft); }
+    .nav-item.active { background: var(--primary-light); color: var(--primary); }
+
+    .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 8px; }
+    .theme-btn {
+      padding: 7px 6px; border-radius: 10px; border: 1px solid var(--border);
+      background: var(--surface-soft); color: var(--text); font-size: 11px; font-weight: 600; cursor: pointer;
+    }
+    .theme-btn.active { border-color: var(--primary); background: var(--primary-light); color: var(--primary); }
+
+    /* Контейнер и секции */
+    .container { max-width: 680px; margin: 0 auto; padding: 16px 14px; }
+    .view-section { display: none; animation: fadeIn 0.25s ease; }
+    .view-section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Иллюстративные баннеры разделов */
+    .section-banner {
+      position: relative; border-radius: 24px; overflow: hidden; min-height: 155px;
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+      color: #fff; box-shadow: 0 14px 32px -8px rgba(0,0,0,0.18); margin-bottom: 16px;
+      background-size: cover; background-position: center;
+    }
+    .section-banner::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(15,18,16,0.18) 0%, rgba(15,18,16,0.76) 100%); z-index: 1;
+    }
+    .banner-content { position: relative; z-index: 2; }
+    .banner-tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.9; font-weight: 600; }
+    .banner-title { font-size: 28px; line-height: 1.15; margin: 3px 0 4px; }
+    .banner-sub { font-size: 13px; opacity: 0.92; }
+
+    /* Герой Мой День */
+    .hero-card { min-height: 235px; justify-content: space-between; }
+    .mode-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .mode-pill {
+      background: rgba(255,255,255,0.22); backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.35); color: #fff;
+      padding: 6px 11px; border-radius: 99px; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.2s;
+    }
+    .mode-pill.active { background: #fff; color: #1f2421; box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+
+    /* Карточки */
+    .card {
+      background: var(--surface); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border); border-radius: 22px; padding: 18px;
+      margin-bottom: 14px; box-shadow: var(--shadow);
+    }
+    .card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; gap: 8px; flex-wrap: wrap; }
+    .card-title { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 7px; }
+    .badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: var(--primary-light); color: var(--primary); }
+
+    /* Прогресс бар */
+    .progress-wrap { background: var(--surface-soft); height: 9px; border-radius: 99px; overflow: hidden; margin: 8px 0; }
+    .progress-fill { background: var(--primary); height: 100%; border-radius: 99px; transition: width 0.35s; }
+
+    /* Элементы списков и кнопки удаления */
+    .list-item {
+      display: flex; align-items: center; justify-content: space-between; gap: 10px;
+      padding: 11px 13px; background: var(--surface-soft); border-radius: 14px; margin-bottom: 8px;
+    }
+    .list-item.done { opacity: 0.6; }
+    .list-item.done .item-title { text-decoration: line-through; }
+    .item-left { display: flex; align-items: center; gap: 11px; flex: 1; cursor: pointer; }
+    .checkbox {
+      width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--primary);
+      display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; flex-shrink: 0;
+    }
+    .checkbox.checked { background: var(--primary); }
+    .del-btn {
+      background: rgba(217, 107, 107, 0.12); color: var(--danger); border: none;
+      width: 28px; height: 28px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 15px;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: 0.15s;
+    }
+    .del-btn:hover { background: var(--danger); color: #fff; }
+
+    /* Формы и кнопки */
+    .input-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .input-row > * { flex: 1; min-width: 110px; }
+    .input-row > .btn, .input-row > .btn-auto { flex: 0 0 auto; min-width: auto; }
+    input[type="text"], input[type="number"], input[type="date"], select, textarea {
+      width: 100%; padding: 10px 13px; border-radius: 12px; border: 1px solid var(--border);
+      background: var(--surface-solid); color: var(--text); font-family: inherit; font-size: 13.5px; outline: none;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--primary); }
+    .btn {
+      background: var(--primary); color: #fff; border: none; padding: 10px 16px;
+      border-radius: 12px; font-size: 13.5px; font-weight: 700; cursor: pointer; font-family: inherit; transition: 0.15s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn-soft { background: var(--primary-light); color: var(--primary); border: none; padding: 8px 13px; border-radius: 10px; font-size: 12.5px; font-weight: 700; cursor: pointer; }
+
+    /* Вкладки (Subtabs) */
+    .subtabs {
+      display: flex; gap: 6px; background: var(--surface-soft); padding: 5px;
+      border-radius: 15px; margin-bottom: 14px; overflow-x: auto;
+    }
+    .subtab {
+      flex: 1; padding: 9px 11px; border-radius: 11px; border: none; background: transparent;
+      color: var(--text-muted); font-size: 12.5px; font-weight: 700; cursor: pointer; font-family: inherit; white-space: nowrap;
+    }
+    .subtab.active { background: var(--surface-solid); color: var(--text); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .subview { display: none; animation: fadeIn 0.2s ease; }
+    .subview.active { display: block; }
+
+    /* Календарь */
+    .cal-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 12px; }
+    .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+    .cal-weekday { font-size: 11px; font-weight: 700; color: var(--text-muted); padding-bottom: 4px; }
+    .cal-day {
+      aspect-ratio: 1/1; border-radius: 12px; background: var(--surface-soft);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      cursor: pointer; font-size: 12.5px; font-weight: 700; position: relative; border: 2px solid transparent; padding: 2px;
+    }
+    .cal-day.selected { border-color: var(--text); }
+    .cal-day-note { font-size: 8.5px; font-weight: 600; max-width: 92%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; opacity: 0.9; }
+    .cal-dots { display: flex; gap: 2px; margin-top: 1px; font-size: 8px; line-height: 1; }
+    .day-study { background: #DCE8DF !important; color: #2B4734 !important; }
+    .day-work { background: #F3E3D3 !important; color: #5C3D22 !important; }
+    .day-both { background: #E6DFF0 !important; color: #403056 !important; }
+    .day-rest { background: #DDEBF2 !important; color: #264657 !important; }
+    .day-exam { background: #F7D9D9 !important; color: #6B2525 !important; }
+
+    /* Банковская VIP-карта в Кошельке */
+    .bank-card {
+      background: var(--card-grad); color: #fff; border-radius: 24px; padding: 22px;
+      box-shadow: 0 16px 34px -8px rgba(0,0,0,0.24); margin-bottom: 16px; position: relative; overflow: hidden;
+    }
+    .bank-card::after {
+      content: ""; position: absolute; right: -40px; top: -40px; width: 160px; height: 160px;
+      border-radius: 50%; background: rgba(255,255,255,0.12); pointer-events: none;
+    }
+    .bank-total-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; }
+    .bank-total-val { font-size: 34px; font-weight: 700; margin: 4px 0 16px; letter-spacing: -0.02em; }
+    .bank-splits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .bank-split-box { background: rgba(255,255,255,0.16); backdrop-filter: blur(8px); padding: 10px 12px; border-radius: 14px; }
+    .bank-split-box span { font-size: 11px; opacity: 0.85; display: block; }
+    .bank-split-box strong { font-size: 17px; }
+
+    /* Сетки и карточки */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    @media (max-width: 500px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .step-pills { display: flex; gap: 5px; flex-wrap: wrap; }
+    .step-pill {
+      font-size: 11px; padding: 4px 9px; border-radius: 8px; border: 1px solid var(--border);
+      background: var(--surface-solid); color: var(--text-muted); cursor: pointer; font-weight: 700;
+    }
+    .step-pill.done { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .comment-box {
+      background: var(--surface-soft); border-left: 3.5px solid var(--primary);
+      padding: 10px 12px; border-radius: 0 12px 12px 0; margin-top: 8px; font-size: 13px;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 8px;
+    }
+
+    /* Нижняя навигация как в приложении */
+    .bottom-nav {
+      position: fixed; bottom: 12px; left: 50%; transform: translateX(-50%);
+      width: calc(100% - 24px); max-width: 520px;
+      background: var(--surface); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border); border-radius: 22px; padding: 6px 8px;
+      display: flex; justify-content: space-around; align-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14); z-index: 50;
+    }
+    .bnav-btn {
+      background: transparent; border: none; color: var(--text-muted);
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+      font-size: 10px; font-weight: 700; padding: 6px 10px; border-radius: 14px; cursor: pointer; font-family: inherit;
+    }
+    .bnav-btn .ico { font-size: 18px; }
+    .bnav-btn.active { color: var(--primary); background: var(--primary-light); }
+
+    /* Тост-уведомление */
+    .toast {
+      position: fixed; bottom: 82px; left: 50%; transform: translateX(-50%) translateY(20px);
+      background: var(--text); color: var(--surface-solid); padding: 10px 18px;
+      border-radius: 99px; font-size: 13px; font-weight: 600; opacity: 0; pointer-events: none;
+      transition: 0.25s; z-index: 120; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- Верхняя панель -->
+  <header class="topbar">
+    <button class="icon-btn" onclick="toggleDrawer(true)" title="Меню">☰</button>
+    <div class="topbar-title" id="currentViewTitle">🌿 Мой день</div>
+    <button class="pomo-pill" onclick="togglePomo()">
+      <span>🍅</span> <span id="pomoTime">25:00</span>
+    </button>
+  </header>
+
+  <!-- Боковое меню -->
+  <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)"></div>
+  <aside class="drawer" id="drawer">
+    <div>
+      <div class="drawer-header">
+        <h2>Мой планер ✨</h2>
+        <p>Бережная экосистема: учёба, смены, кошелёк и забота о себе</p>
+      </div>
+      <nav class="nav-list">
+        <button class="nav-item active" onclick="switchView('day', '🌿 Мой день', this)">🌿 1. Мой день</button>
+        <button class="nav-item" onclick="switchView('calendar', '🗓 Календарь', this)">🗓 2. Календарь</button>
+        <button class="nav-item" onclick="switchView('study', '📚 Учёба и ЕГЭ', this)">📚 3. Учёба (ЕГЭ)</button>
+        <button class="nav-item" onclick="switchView('wallet', '💳 Кошелёк', this)">💳 4. Кошелёк</button>
+        <button class="nav-item" onclick="switchView('sport', '🧘‍♀️ Тренировки', this)">🧘‍♀️ 5. Тренировки</button>
+        <button class="nav-item" onclick="switchView('tracker', '✨ Трекер привычек', this)">✨ 6. Трекер</button>
+        <button class="nav-item" onclick="switchView('books', '📖 Книги', this)">📖 7. Книги</button>
+        <button class="nav-item" onclick="switchView('me', '🌸 Я (Уход и Цели)', this)">🌸 8. Я</button>
+        <button class="nav-item" onclick="switchView('stats', '📊 Итоги и Отчёты', this)">📊 9. Итоги</button>
+      </nav>
+    </div>
+
+    <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border);">
+      <div style="font-size: 11px; font-weight: 700; color: var(--text-muted);">Палитра приложения</div>
+      <div class="theme-grid">
+        <button class="theme-btn" onclick="setTheme('matcha')">🌿 Матча</button>
+        <button class="theme-btn" onclick="setTheme('blush')">🌸 Пудра</button>
+        <button class="theme-btn" onclick="setTheme('ocean')">🌊 Океан</button>
+        <button class="theme-btn" onclick="setTheme('lavender')">🔮 Лаванда</button>
+        <button class="theme-btn" onclick="setTheme('dark')">🌙 Полночь</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="container">
+
+    <!-- ================= 1. МОЙ ДЕНЬ ================= -->
+    <section id="view-day" class="view-section active">
+      <div class="section-banner hero-card" id="heroCard" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="mode-pills" id="dayModePills">
+            <button class="mode-pill" onclick="setTodayMode('study')">🌿 Учёба</button>
+            <button class="mode-pill" onclick="setTodayMode('work')">☕ Рабочая смена</button>
+            <button class="mode-pill" onclick="setTodayMode('both')">✨ Смена + Учёба</button>
+            <button class="mode-pill" onclick="setTodayMode('rest')">☁️ Выходной</button>
+          </div>
+        </div>
+        <div class="banner-content">
+          <div class="banner-tag" id="heroDate">Сегодня • Синхронизировано с календарём</div>
+          <h1 class="banner-title" id="heroGreeting">Твой бережный ритм</h1>
+          <p class="banner-sub" id="heroQuote">Маленькие шаги каждый день приводят к большим результатам.</p>
+        </div>
+      </div>
+
+      <!-- Напоминание из раздела Лечение на сегодня -->
+      <div id="todayMedAlert" class="card" style="display:none; border-color: var(--accent); background: var(--primary-light);"></div>
+
+      <!-- Блок заработка за смену (показывается, если режим Работа или Смена+Учёба) -->
+      <div class="card" id="shiftIncomeCard" style="display:none;">
+        <div class="card-header">
+          <div class="card-title">☕ Доход за сегодняшнюю смену</div>
+          <span class="badge" id="shiftClosedBadge">Зачислится вечером</span>
+        </div>
+        <p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+          Укажи, сколько заработала за смену. При нажатии «🌙 Закрыть день» сумма автоматически прибавится в Кошелёк!
+        </p>
+        <div class="input-row">
+          <input type="number" id="shiftEarnedInput" placeholder="Сумма за смену (₽)" oninput="saveShiftDraft()">
+          <select id="shiftWalletType" onchange="saveShiftDraft()">
+            <option value="card">💳 На карту</option>
+            <option value="cash">💵 Наличными</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Прогресс и закрытие дня -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Прогресс дня</div>
+          <span class="badge" id="dayProgressLabel">0% (0/0)</span>
+        </div>
+        <div class="progress-wrap"><div class="progress-fill" id="dayProgressBar" style="width:0%"></div></div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:12px; color:var(--text-muted);" id="modeNormHint">Выбери комфортный темп</span>
+          <button class="btn" onclick="closeDayEvening()">🌙 Закрыть день (Итог в кошелёк)</button>
+        </div>
+      </div>
+
+      <!-- Задачи на сегодня -->
+      <div class="card">
+        <div class="card-header"><div class="card-title">📋 Задачи на сегодня</div></div>
+        <div id="tasksContainer"></div>
+        <div class="input-row">
+          <input type="text" id="newTaskInput" placeholder="Добавить задачу...">
+          <select id="newTaskPrio" style="max-width:140px;">
+            <option value="high">🔥 Важное</option>
+            <option value="normal">Обычное</option>
+          </select>
+          <button class="btn" onclick="addTask()">+</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 2. КАЛЕНДАРЬ ================= -->
+    <section id="view-calendar" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Планирование ритма • 2026 — Сентябрь 2027</div>
+          <h1 class="banner-title">Календарь режимов и событий</h1>
+          <p class="banner-sub">Цвета дней, рабочие смены, лечение и привычки в одном месте</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="cal-nav">
+          <button class="icon-btn" onclick="changeCalMonth(-1)">←</button>
+          <select id="calMonthSelect" onchange="onCalSelectChange()" style="font-weight:700; text-align:center; max-width:220px;"></select>
+          <button class="icon-btn" onclick="changeCalMonth(1)">→</button>
+        </div>
+        <div class="cal-grid">
+          <div class="cal-weekday">Пн</div><div class="cal-weekday">Вт</div><div class="cal-weekday">Ср</div>
+          <div class="cal-weekday">Чт</div><div class="cal-weekday">Пт</div><div class="cal-weekday">Сб</div><div class="cal-weekday">Вс</div>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title" id="selectedDateTitle">Настройка выбранного дня</div>
+          <button class="del-btn" onclick="clearCalDay()" title="Очистить день">×</button>
+        </div>
+        <div class="grid-2" style="margin-bottom:10px;">
+          <select id="calDayType">
+            <option value="">Без цвета и режима</option>
+            <option value="study">🌿 День учёбы (оливковый)</option>
+            <option value="work">☕ Рабочая смена (песочный)</option>
+            <option value="both">✨ Смена + Учёба (лавандовый)</option>
+            <option value="rest">☁️ Выходной (голубой)</option>
+            <option value="exam">🎯 Пробник / Важное (розовый)</option>
+          </select>
+          <input type="text" id="calDayNote" placeholder="Заметка дня (напр. Смена, Био)...">
+        </div>
+        <button class="btn" style="width:100%;" onclick="saveCalDay()">Сохранить отметку дня</button>
+        <div id="calDayDetails" style="margin-top:12px; font-size:12.5px; color:var(--text-muted);"></div>
+      </div>
+    </section>
+
+    <!-- ================= 3. УЧЁБА (ЕГЭ) ================= -->
+    <section id="view-study" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Подготовка без выгорания</div>
+          <h1 class="banner-title">Учёба и ЕГЭ</h1>
+          <p class="banner-sub">Химия, Биология и Английский — кодификатор, пробники и ловушки</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchStudySubject('chem', this)">🧪 Химия</button>
+        <button class="subtab" onclick="switchStudySubject('bio', this)">🧬 Биология</button>
+        <button class="subtab" onclick="switchStudySubject('eng', this)">🇬🇧 Английский</button>
+      </div>
+
+      <!-- Кодификатор тем -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title" id="studySubjTitle">Темы ЕГЭ: Химия</div>
+          <span class="badge" id="studySubjProgress">0% освоено</span>
+        </div>
+        <div id="studyTopicsList"></div>
+        <div class="input-row">
+          <input type="text" id="newStudyTopic" placeholder="Добавить тему кодификатора...">
+          <button class="btn" onclick="addStudyTopic()">+ Тема</button>
+        </div>
+      </div>
+
+      <!-- Спец-блок для Английского (лексика и шаблоны) / Для ХимБио (сложные реакции и ловушки) -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title" id="studyNotesTitle">💡 Мои ловушки, реакции и правила</div>
+        </div>
+        <div id="studyTrapsList"></div>
+        <div class="input-row">
+          <input type="text" id="trapTerm" placeholder="Правило / Слово / Реакция...">
+          <input type="text" id="trapDesc" placeholder="Пояснение / Перевод / Нюанс...">
+          <button class="btn" onclick="addStudyTrap()">+</button>
+        </div>
+      </div>
+
+      <!-- Дневник пробников -->
+      <div class="card">
+        <div class="card-header"><div class="card-title">📈 Дневник пробников</div></div>
+        <div id="studyMocksList"></div>
+        <div class="input-row">
+          <input type="number" id="mockScore" placeholder="Балл (0-100)" min="0" max="100" style="max-width:130px;">
+          <input type="text" id="mockComment" placeholder="Где были ошибки и что повторить...">
+          <button class="btn" onclick="addStudyMock()">Записать</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. КОШЕЛЁК ================= -->
+    <section id="view-wallet" class="view-section">
+      <!-- VIP Банковская карта баланса -->
+      <div class="bank-card">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+          <div>
+            <div class="bank-total-label">Общий свободный баланс</div>
+            <div class="bank-total-val" id="walletTotalDisplay">0 ₽</div>
+          </div>
+          <button class="btn-soft" style="background:rgba(255,255,255,0.2); color:#fff;" onclick="promptEditBalance()">✏️ Изменить баланс</button>
+        </div>
+        <div class="bank-splits">
+          <div class="bank-split-box">
+            <span>💳 На карте</span>
+            <strong id="walletCardDisplay">0 ₽</strong>
+          </div>
+          <div class="bank-split-box">
+            <span>💵 Наличными</span>
+            <strong id="walletCashDisplay">0 ₽</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Вкладки внутри Кошелька -->
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchSubtab('wallet', 'expenses', this)">📉 Расходы</button>
+        <button class="subtab" onclick="switchSubtab('wallet', 'piggy', this)">🐷 Копилки (до 20)</button>
+        <button class="subtab" onclick="switchSubtab('wallet', 'debts', this)">🤝 Долги (до 20)</button>
+        <button class="subtab" onclick="switchSubtab('wallet', 'planned', this)">🎯 Запланированное</button>
+      </div>
+
+      <!-- 4.1 Расходы -->
+      <div id="wallet-expenses" class="subview active">
+        <div class="card">
+          <div class="card-header"><div class="card-title">☕ Быстрый расход (авто-вычет)</div></div>
+          <div class="grid-2" style="margin-bottom:8px;">
+            <input type="text" id="expTitle" placeholder="На что (Кофе, обед, вкусняшки)...">
+            <input type="number" id="expAmount" placeholder="Сумма (₽)">
+          </div>
+          <div class="input-row">
+            <select id="expSource">
+              <option value="card">💳 Списать с карты</option>
+              <option value="cash">💵 Списать с наличных</option>
+            </select>
+            <button class="btn" onclick="addExpense()">Списать расход</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">История расходов</div></div>
+          <div id="expensesList"></div>
+        </div>
+      </div>
+
+      <!-- 4.2 Копилки (до 20) -->
+      <div id="wallet-piggy" class="subview">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🐷 Мои копилки</div>
+            <span class="badge" id="piggyCountBadge">0 / 20</span>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+            При пополнении копилки деньги автоматически списываются с выбранного счёта (карты или наличных).
+          </p>
+          <div id="piggyList"></div>
+          <div style="margin-top:12px; padding-top:12px; border-top:1px solid var(--border);">
+            <div style="font-size:13px; font-weight:700; margin-bottom:6px;">Создать новую копилку</div>
+            <div class="input-row">
+              <input type="text" id="newPiggyName" placeholder="Название цели (напр. Отпуск, Айфон)...">
+              <input type="number" id="newPiggyTarget" placeholder="Сколько нужно (₽)">
+              <input type="number" id="newPiggyInitial" placeholder="Уже есть (₽)">
+              <button class="btn" onclick="addPiggy()">+ Создать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4.3 Долги (до 20) -->
+      <div id="wallet-debts" class="subview">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🤝 Кому и сколько я должна</div>
+            <span class="badge" id="debtsCountBadge">0 / 20</span>
+          </div>
+          <div id="debtsList"></div>
+          <div class="input-row" style="margin-top:12px;">
+            <input type="text" id="debtWho" placeholder="Кому должна...">
+            <input type="number" id="debtSum" placeholder="Сумма (₽)">
+            <input type="text" id="debtNote" placeholder="Комментарий...">
+            <button class="btn" onclick="addDebt()">+ Добавить</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4.4 Запланированное -->
+      <div id="wallet-planned" class="subview">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🎯 Список планируемых покупок</div>
+            <span class="badge" id="plannedTotalBadge">Примерно: 0 ₽</span>
+          </div>
+          <div id="plannedList"></div>
+          <div class="input-row">
+            <input type="text" id="planTitle" placeholder="Что хочу купить / оплатить...">
+            <input type="number" id="planEst" placeholder="Примерная сумма (₽)">
+            <button class="btn" onclick="addPlannedItem()">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. ТРЕНИРОВКИ ================= -->
+    <section id="view-sport" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Забота о теле</div>
+          <h1 class="banner-title">Тренировки и движение</h1>
+          <p class="banner-sub">Спина, зарядка, беговая дорожка и полноценные тренировки</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchSubtab('sport', 'back', this)">🧘‍♀️ 1. Спина</button>
+        <button class="subtab" onclick="switchSubtab('sport', 'warmup', this)">☀️ 2. Зарядка</button>
+        <button class="subtab" onclick="switchSubtab('sport', 'treadmill', this)">🏃‍♀️ 3. Дорожка</button>
+        <button class="subtab" onclick="switchSubtab('sport', 'workout', this)">💪 4. Тренировка</button>
+      </div>
+
+      <div id="sport-back" class="subview active">
+        <div class="card">
+          <div class="card-header"><div class="card-title">🧘‍♀️ Здоровая спина и МФР</div></div>
+          <div class="input-row">
+            <input type="number" id="spBackMin" placeholder="Время (минут)">
+            <input type="text" id="spBackNote" placeholder="Что делала (растяжка, ролл, ощущения)...">
+            <button class="btn" onclick="addSportLog('Спина', 'spBackMin', 'spBackNote')">Сохранить</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sport-warmup" class="subview">
+        <div class="card">
+          <div class="card-header"><div class="card-title">☀️ Утренняя зарядка</div></div>
+          <div class="input-row">
+            <input type="number" id="spWarmMin" placeholder="Время (минут)">
+            <input type="text" id="spWarmNote" placeholder="Самочувствие и бодрость...">
+            <button class="btn" onclick="addSportLog('Зарядка', 'spWarmMin', 'spWarmNote')">Сохранить</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sport-treadmill" class="subview">
+        <div class="card">
+          <div class="card-header"><div class="card-title">🏃‍♀️ Беговая дорожка</div></div>
+          <div class="grid-2" style="margin-bottom:8px;">
+            <input type="number" id="spTreadMin" placeholder="Время (минут)">
+            <input type="number" step="0.1" id="spTreadKm" placeholder="Расстояние (км)">
+          </div>
+          <div class="input-row">
+            <input type="text" id="spTreadNote" placeholder="Режим (уклон, скорость, пульс)...">
+            <button class="btn" onclick="addTreadmillLog()">Сохранить</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="sport-workout" class="subview">
+        <div class="card">
+          <div class="card-header"><div class="card-title">💪 Выбери формат тренировки</div></div>
+          <div class="grid-3" style="margin-bottom:10px;">
+            <button class="btn-soft" onclick="selectWorkoutPreset('Полчаса (30 мин)', 30)">⏱ Полчаса</button>
+            <button class="btn-soft" onclick="selectWorkoutPreset('Час (60 мин)', 60)">🔥 1 Час</button>
+            <button class="btn-soft" onclick="selectWorkoutPreset('Час + Дорожка', 75)">🏃‍♀️ Час + Дорожка</button>
+          </div>
+          <div class="input-row">
+            <input type="text" id="spWorkType" placeholder="Формат (или выбери кнопку выше)...">
+            <input type="number" id="spWorkMin" placeholder="Минут" style="max-width:110px;">
+            <input type="text" id="spWorkNote" placeholder="Акцент (ноги, кор, силовая)...">
+            <button class="btn" onclick="addWorkoutPresetLog()">Сохранить</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title">Журнал тренировок</div></div>
+        <div id="sportLogsList"></div>
+      </div>
+    </section>
+
+    <!-- ================= 6. ТРЕКЕР ПРИВЫЧЕК ================= -->
+    <section id="view-tracker" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Без обнуления за пропуски</div>
+          <h1 class="banner-title">Трекер устойчивости</h1>
+          <p class="banner-sub">Синхронизирован с календарём: каждая галочка сохраняется в истории дня</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="filterHabits('all', this)">✨ Все</button>
+        <button class="subtab" onclick="filterHabits('Спорт', this)">🧘‍♀️ Спорт</button>
+        <button class="subtab" onclick="filterHabits('Учёба', this)">📚 Учёба</button>
+        <button class="subtab" onclick="filterHabits('Английский', this)">🇬🇧 Английский</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Привычки на сегодня</div>
+          <span class="badge" id="habitDateBadge">Сегодня</span>
+        </div>
+        <div id="habitsList"></div>
+        <div class="input-row">
+          <input type="text" id="newHabitTitle" placeholder="Новая привычка...">
+          <select id="newHabitCat" style="max-width:155px;">
+            <option value="Спорт">🧘‍♀️ Спорт</option>
+            <option value="Учёба">📚 Учёба</option>
+            <option value="Английский">🇬🇧 Английский</option>
+          </select>
+          <button class="btn" onclick="addHabit()">+</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 7. КНИГИ ================= -->
+    <section id="view-books" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Литературный уголок</div>
+          <h1 class="banner-title">Мои книги и заметки</h1>
+          <p class="banner-sub">Закладки страниц, любимые цитаты и книжная полка</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchBookTab('reading', this)">📖 Читаю сейчас</button>
+        <button class="subtab" onclick="switchBookTab('read', this)">✅ Прочитанное</button>
+        <button class="subtab" onclick="switchBookTab('want', this)">🔖 Буду читать</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><div class="card-title" id="bookTabHeading">📖 Читаю сейчас</div></div>
+        <div id="booksListContainer"></div>
+
+        <div style="margin-top:14px; padding-top:12px; border-top:1px solid var(--border);">
+          <div style="font-size:13px; font-weight:700; margin-bottom:6px;">Добавить книгу в этот раздел</div>
+          <div class="input-row">
+            <input type="text" id="newBookTitle" placeholder="Название и автор...">
+            <input type="number" id="newBookTotalPages" placeholder="Всего стр." style="max-width:125px;">
+            <button class="btn" onclick="addBook()">+ Книга</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 8. Я (ВОЛОСЫ, ЛЕЧЕНИЕ, ЦЕЛИ) ================= -->
+    <section id="view-me" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Любовь к себе и мечты</div>
+          <h1 class="banner-title">Раздел «Я» 🌸</h1>
+          <p class="banner-sub">Уход за волосами, календарь здоровья и вдохновляющие цели</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchSubtab('me', 'hair', this)">💇‍♀️ 1. Волосы</button>
+        <button class="subtab" onclick="switchSubtab('me', 'med', this)">💊 2. Лечение</button>
+        <button class="subtab" onclick="switchSubtab('me', 'goals', this)">🌟 3. Цели</button>
+      </div>
+
+      <!-- 8.1 Волосы -->
+      <div id="me-hair" class="subview active">
+        <div class="card">
+          <div class="card-header"><div class="card-title">💇‍♀️ Уход за волосами и ритуалы</div></div>
+          <div id="hairList"></div>
+          <div class="input-row">
+            <input type="text" id="newHairItem" placeholder="Процедура или баночка (маска, пилинг, масло)...">
+            <button class="btn" onclick="addHairItem()">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8.2 Лечение (синхронизировано с Календарём) -->
+      <div id="me-med" class="subview">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">💊 План лечения и приёмов</div>
+            <span class="badge">Синхронизировано с Календарём</span>
+          </div>
+          <p style="font-size:12px; color:var(--text-muted); margin-bottom:10px;">
+            Записи с датой автоматически отмечаются значком 💊 в общем Календаре и напоминают о себе в «Моём дне».
+          </p>
+          <div id="medList"></div>
+          <div class="input-row">
+            <input type="text" id="newMedTitle" placeholder="Что сделать / принять (Стоматолог, Витамин D)...">
+            <input type="date" id="newMedDate" min="2026-01-01" max="2027-09-30" style="max-width:160px;">
+            <button class="btn" onclick="addMedItem()">+ В календарь</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8.3 Цели на будущее -->
+      <div id="me-goals" class="subview">
+        <div class="card">
+          <div class="card-header"><div class="card-title">🌟 Мои большие цели и мечты</div></div>
+          <div id="goalsList"></div>
+          <div class="input-row">
+            <input type="text" id="newGoalTitle" placeholder="Моя цель или мечта...">
+            <select id="newGoalCat" style="max-width:185px;">
+              <option value="🎓 Поступление и Карьера">🎓 Поступление</option>
+              <option value="✨ Покупки и Комфорт">✨ Покупки и Уют</option>
+              <option value="🌍 Путешествия и Яркость">🌍 Впечатления</option>
+              <option value="🧘‍♀️ Состояние и Здоровье">🧘‍♀️ Состояние</option>
+            </select>
+            <button class="btn" onclick="addGoalItem()">+</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 9. ИТОГИ И ОТЧЁТЫ ================= -->
+    <section id="view-stats" class="view-section">
+      <div class="section-banner" style="background-image: url('https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80');">
+        <div class="banner-content">
+          <div class="banner-tag">Аналитика и рефлексия</div>
+          <h1 class="banner-title">Итоги и личные отчёты</h1>
+          <p class="banner-sub">Твой прогресс по учёбе, сменам, тренировкам и прочитанным книгам</p>
+        </div>
+      </div>
+
+      <div class="subtabs">
+        <button class="subtab active" onclick="switchSubtab('stats', 'st-study', this)">📚 Учёба</button>
+        <button class="subtab" onclick="switchSubtab('stats', 'st-work', this)">☕ Работа</button>
+        <button class="subtab" onclick="switchSubtab('stats', 'st-sport', this)">🧘‍♀️ Спорт</button>
+        <button class="subtab" onclick="switchSubtab('stats', 'st-books', this)">📖 Книги</button>
+      </div>
+
+      <div id="stats-st-study" class="subview active"><div class="card" id="statBoxStudy"></div></div>
+      <div id="stats-st-work" class="subview"><div class="card" id="statBoxWork"></div></div>
+      <div id="stats-st-sport" class="subview"><div class="card" id="statBoxSport"></div></div>
+      <div id="stats-st-books" class="subview"><div class="card" id="statBoxBooks"></div></div>
+
+      <!-- Отчёты внизу -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">📝 Личные отчёты и выводы</div>
+          <span class="badge">Дневник итогов</span>
+        </div>
+        <div class="grid-2" style="margin-bottom:8px;">
+          <select id="repCat">
+            <option value="📚 Учёба и ЕГЭ">📚 Учёба и ЕГЭ</option>
+            <option value="☕ Работа и Финансы">☕ Работа и Финансы</option>
+            <option value="🧘‍♀️ Спорт и Тело">🧘‍♀️ Спорт и Тело</option>
+            <option value="🌙 Общий итог недели/месяца">🌙 Общий итог</option>
+          </select>
+          <input type="text" id="repTitle" placeholder="Главный вывод коротко...">
+        </div>
+        <textarea id="repText" rows="3" placeholder="Напиши подробный отчёт: за что себя хвалишь, что получилось..."></textarea>
+        <button class="btn" style="width:100%; margin-top:8px;" onclick="addReport()">Сохранить отчёт</button>
+        <div id="reportsList" style="margin-top:12px;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Нижняя панель быстрого доступа -->
+  <nav class="bottom-nav">
+    <button class="bnav-btn active" onclick="switchView('day', '🌿 Мой день')"><span class="ico">🌿</span><span>День</span></button>
+    <button class="bnav-btn" onclick="switchView('calendar', '🗓 Календарь')"><span class="ico">🗓</span><span>Календарь</span></button>
+    <button class="bnav-btn" onclick="switchView('study', '📚 Учёба и ЕГЭ')"><span class="ico">📚</span><span>Учёба</span></button>
+    <button class="bnav-btn" onclick="switchView('wallet', '💳 Кошелёк')"><span class="ico">💳</span><span>Кошелёк</span></button>
+    <button class="bnav-btn" onclick="switchView('me', '🌸 Я (Уход и Цели)')"><span class="ico">🌸</span><span>Я</span></button>
+  </nav>
+
+  <div class="toast" id="toast">Сохранено ✨</div>
+
+  <script>
+    // ================= БАЗА ДАННЫХ И СОСТОЯНИЕ =================
+    const STORAGE_KEY = 'CAREFUL_PLANNER_PRO_V2';
+    const todayStr = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+
+    const defaultState = {
+      theme: 'blush',
+      todayMode: 'study',
+      shiftDraft: { amount: '', type: 'card', closedDate: '' },
+      tasks: [
+        { id: 1, text: 'Повторить ОВР по химии', prio: 'high', done: false },
+        { id: 2, text: 'Разминка для спины 15 минут', prio: 'normal', done: true }
+      ],
+      calendar: {
+        '2026-10-26': { type: 'work', note: 'Смена', income: 0 },
+        '2026-10-27': { type: 'both', note: 'Смена+Био', income: 0 }
+      },
+      study: {
+        chem: {
+          topics: [
+            { id: 1, title: 'Строение атома и периодический закон', s1: true, s2: true, s3: false },
+            { id: 2, title: 'Окислительно-восстановительные реакции', s1: true, s2: false, s3: false }
+          ],
+          traps: [{ id: 1, term: 'CrO3 + HCl', desc: 'Окислитель хромат, выделяется Cl2' }],
+          mocks: [{ id: 1, date: '20 окт', score: 76, comment: 'Внимательнее в 34 задаче' }]
+        },
+        bio: {
+          topics: [
+            { id: 3, title: 'Митоз и мейоз: фазы и наборы (n, c)', s1: true, s2: true, s3: true }
+          ],
+          traps: [{ id: 2, term: 'Анафаза митоза', desc: 'Набор 4n4c у полюсов клетки' }],
+          mocks: []
+        },
+        eng: {
+          topics: [
+            { id: 4, title: 'Эссе по графикам (Задание 38) — структура', s1: true, s2: true, s3: false },
+            { id: 5, title: 'Словообразование (Задания 25–29)', s1: true, s2: false, s3: false }
+          ],
+          traps: [{ id: 3, term: 'look forward to + Ving', desc: 'После предлога to всегда герундий!' }],
+          mocks: []
+        }
+      },
+      wallet: {
+        card: 14500,
+        cash: 3200,
+        shiftsCompleted: 4,
+        totalShiftEarned: 12000,
+        expenses: [
+          { id: 1, title: 'Матча латте и круассан', amount: 420, source: 'card', date: 'Сегодня' }
+        ],
+        piggy: [
+          { id: 1, name: 'Отдых после ЕГЭ 🌊', target: 50000, saved: 15000 },
+          { id: 2, name: 'Обновление гардероба ✨', target: 20000, saved: 6500 }
+        ],
+        debts: [
+          { id: 1, who: 'Аня (за общий подарок)', sum: 800, note: 'Вернуть на Сбер' }
+        ],
+        planned: [
+          { id: 1, title: 'Сборник 30 вариантов по Химии', est: 750 },
+          { id: 2, title: 'Уходовая маска для волос', est: 1400 }
+        ]
+      },
+      sport: [
+        { id: 1, cat: 'Спина', min: 15, km: 0, note: 'МФР роллом + грудной отдел', date: '25 окт' },
+        { id: 2, cat: 'Дорожка', min: 30, km: 3.4, note: 'Ходьба в горку (уклон 6%)', date: '26 окт' }
+      ],
+      habits: [
+        { id: 1, title: 'Разминка спины 10 мин', cat: 'Спорт', days: { '2026-10-25': true, '2026-10-26': true } },
+        { id: 2, title: '20 заданий первой части ЕГЭ', cat: 'Учёба', days: { '2026-10-25': true } },
+        { id: 3, title: '15 новых слов / Phrasal Verbs', cat: 'Английский', days: {} }
+      ],
+      books: [
+        { id: 1, status: 'reading', title: 'Атомные привычки — Джеймс Клир', curPage: 120, totalPages: 300, notes: [{ id: 11, page: 85, text: 'Мы падаем до уровня своих систем.' }] },
+        { id: 2, status: 'want', title: 'Гордость и предубеждение — Джейн Остин', curPage: 0, totalPages: 416, notes: [] },
+        { id: 3, status: 'read', title: 'Цветы для Элджернона — Дэниел Киз', curPage: 320, totalPages: 320, notes: [] }
+      ],
+      me: {
+        hair: [
+          { id: 1, text: 'Пилинг кожи головы (1 раз в 10 дней)', done: false },
+          { id: 2, text: 'Питательная маска + термошапка', done: true },
+          { id: 3, text: 'Масло на кончики после каждого мытья', done: false }
+        ],
+        med: [
+          { id: 1, title: 'Витамин D3 + Омега утром', date: todayStr, done: false }
+        ],
+        goals: [
+          { id: 1, title: 'Сдать ЕГЭ на 260+ баллов и поступить в вуз мечты', cat: '🎓 Поступление и Карьера', done: false },
+          { id: 2, title: 'Поехать к морю летом без единой мысли об экзаменах', cat: '🌍 Путешествия и Яркость', done: false }
+        ]
+      },
+      reports: [
+        { id: 1, cat: '☕ Работа и Финансы', title: 'Меньше тревоги в дни смен', text: 'Перестала требовать от себя 3 часа учёбы после смены, и в выходные продуктивность выросла вдвое.', date: '25 окт' }
+      ]
+    };
+
+    let state = loadState();
+    let currentStudySubj = 'chem';
+    let currentHabitFilter = 'all';
+    let currentBookTab = 'reading';
+
+    // Календарь: 21 месяц (Январь 2026 — Сентябрь 2027)
+    const calMonths = [];
+    const monthNames = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+    for (let y = 2026; y <= 2027; y++) {
+      const maxM = (y === 2027) ? 8 : 11;
+      for (let m = 0; m <= maxM; m++) calMonths.push({ year: y, month: m, label: `${monthNames[m]} ${y}` });
+    }
+    let curCalIdx = 9; // Октябрь 2026 по умолчанию
+    let selectedCalDate = todayStr.startsWith('2026') || todayStr.startsWith('2027') ? todayStr : '2026-10-26';
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return JSON.parse(JSON.stringify(defaultState));
+        return Object.assign(JSON.parse(JSON.stringify(defaultState)), JSON.parse(raw));
+      } catch (e) {
+        return JSON.parse(JSON.stringify(defaultState));
+      }
+    }
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2200);
+    }
+
+    // ================= НАВИГАЦИЯ И ТЕМЫ =================
+    function toggleDrawer(open) {
+      document.getElementById('drawer').classList.toggle('open', open);
+      document.getElementById('drawerBackdrop').classList.toggle('open', open);
+    }
+
+    function switchView(viewId, title) {
+      document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('view-' + viewId).classList.add('active');
+      document.getElementById('currentViewTitle').textContent = title;
+
+      document.querySelectorAll('.nav-item').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('onclick').includes(`'${viewId}'`));
+      });
+      document.querySelectorAll('.bnav-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('onclick').includes(`'${viewId}'`));
+      });
+      toggleDrawer(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      renderAll();
+    }
+
+    function switchSubtab(group, subId, btn) {
+      const parent = document.getElementById('view-' + group);
+      parent.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      parent.querySelectorAll('.subview').forEach(v => v.classList.remove('active'));
+      document.getElementById(group + '-' + subId).classList.add('active');
+    }
+
+    function setTheme(theme) {
+      state.theme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      document.querySelectorAll('.theme-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('onclick').includes(`'${theme}'`));
+      });
+      saveState();
+    }
+
+    // ================= 1. МОЙ ДЕНЬ + СМЕНА =================
+    const modeConfig = {
+      study: {
+        title: 'Глубокий фокус на учёбе 🌿',
+        quote: 'Разбери сложную тему и похвали себя за каждый шаг.',
+        norm: 'Норма: 2–3 учебные задачи + разминка спины',
+        img: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80'
+      },
+      work: {
+        title: 'Рабочая смена без перегруза ☕',
+        quote: 'Сегодня твой приоритет — работа и восстановление после неё.',
+        norm: 'Норма: Отработать смену, записать доход и бережно отдохнуть',
+        img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80'
+      },
+      both: {
+        title: 'Смена + Бережная учёба ✨',
+        quote: 'Сделай только 1 короткую задачу по ЕГЭ — этого уже достаточно!',
+        norm: 'Норма: Смена + 20 минут лёгкой практики',
+        img: 'https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=80'
+      },
+      rest: {
+        title: 'Чистый выходной без чувства вины ☁️',
+        quote: 'Отдых — это часть подготовки к высоким баллам. Наполнись силами.',
+        norm: 'Норма: 0 обязательных задач. Только то, что радует душу и тело',
+        img: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1000&q=80'
+      }
+    };
+
+    function setTodayMode(mode) {
+      state.todayMode = mode;
+      // Синхронизируем с сегодняшним днём в календаре
+      if (!state.calendar[selectedCalDate]) state.calendar[selectedCalDate] = { type: mode, note: '' };
+      else state.calendar[selectedCalDate].type = mode;
+      saveState();
+      renderDay();
+    }
+
+    function saveShiftDraft() {
+      state.shiftDraft.amount = document.getElementById('shiftEarnedInput').value;
+      state.shiftDraft.type = document.getElementById('shiftWalletType').value;
+      saveState();
+    }
+
+    function closeDayEvening() {
+      const mode = state.todayMode;
+      const amt = parseFloat(state.shiftDraft.amount) || 0;
+      if ((mode === 'work' || mode === 'both') && amt > 0) {
+        if (state.shiftDraft.type === 'card') state.wallet.card += amt;
+        else state.wallet.cash += amt;
+        state.wallet.shiftsCompleted = (state.wallet.shiftsCompleted || 0) + 1;
+        state.wallet.totalShiftEarned = (state.wallet.totalShiftEarned || 0) + amt;
+
+        if (!state.calendar[selectedCalDate]) state.calendar[selectedCalDate] = { type: mode, note: 'Смена' };
+        state.calendar[selectedCalDate].income = (state.calendar[selectedCalDate].income || 0) + amt;
+
+        state.shiftDraft.amount = '';
+        document.getElementById('shiftEarnedInput').value = '';
+        saveState();
+        renderAll();
+        showToast(`🌙 День закрыт! +${amt} ₽ зачислено в Кошелёк`);
+      } else {
+        showToast('🌙 День бережно закрыт! Отдыхай ✨');
+      }
+    }
+
+    function renderDay() {
+      // Если в календаре на выбранную дату есть режим, подхватываем
+      const mode = state.todayMode || 'study';
+      const cfg = modeConfig[mode] || modeConfig.study;
+
+      document.getElementById('heroCard').style.backgroundImage = `url('${cfg.img}')`;
+      document.getElementById('heroGreeting').textContent = cfg.title;
+      document.getElementById('heroQuote').textContent = cfg.quote;
+      document.getElementById('modeNormHint').textContent = cfg.norm;
+
+      const pills = document.querySelectorAll('#dayModePills .mode-pill');
+      pills.forEach(p => p.classList.toggle('active', p.getAttribute('onclick').includes(`'${mode}'`)));
+
+      // Показываем блок дохода за смену при режиме work или both
+      const shiftCard = document.getElementById('shiftIncomeCard');
+      shiftCard.style.display = (mode === 'work' || mode === 'both') ? 'block' : 'none';
+      document.getElementById('shiftEarnedInput').value = state.shiftDraft.amount || '';
+      document.getElementById('shiftWalletType').value = state.shiftDraft.type || 'card';
+
+      // Проверяем напоминания из раздела Лечение
+      const medsToday = state.me.med.filter(m => m.date === selectedCalDate && !m.done);
+      const alertBox = document.getElementById('todayMedAlert');
+      if (medsToday.length > 0) {
+        alertBox.style.display = 'block';
+        alertBox.innerHTML = `<strong>💊 Напоминание из раздела «Лечение»:</strong> ` + medsToday.map(m => m.title).join(', ');
+      } else {
+        alertBox.style.display = 'none';
+      }
+
+      // Задачи
+      const box = document.getElementById('tasksContainer');
+      box.innerHTML = '';
+      state.tasks.forEach(t => {
+        const div = document.createElement('div');
+        div.className = 'list-item' + (t.done ? ' done' : '');
+        div.innerHTML = `
+          <div class="item-left" onclick="toggleTask(${t.id})">
+            <div class="checkbox ${t.done ? 'checked' : ''}">${t.done ? '✓' : ''}</div>
+            <span class="item-title" style="font-size:14px; font-weight:600;">${t.text}</span>
+            ${t.prio === 'high' ? '<span class="badge" style="font-size:10px;">🔥 Важно</span>' : ''}
+          </div>
+          <button class="del-btn" onclick="deleteTask(${t.id})">×</button>
+        `;
+        box.appendChild(div);
+      });
+
+      const total = state.tasks.length;
+      const done = state.tasks.filter(t => t.done).length;
+      const pct = total ? Math.round((done / total) * 100) : 0;
+      document.getElementById('dayProgressLabel').textContent = `${pct}% выполнено (${done}/${total})`;
+      document.getElementById('dayProgressBar').style.width = pct + '%';
+    }
+
+    function addTask() {
+      const inp = document.getElementById('newTaskInput');
+      const prio = document.getElementById('newTaskPrio').value;
+      if (!inp.value.trim()) return;
+      state.tasks.push({ id: Date.now(), text: inp.value.trim(), prio, done: false });
+      inp.value = '';
+      saveState(); renderDay();
+    }
+    function toggleTask(id) {
+      const t = state.tasks.find(x => x.id === id);
+      if (t) t.done = !t.done;
+      saveState(); renderDay();
+    }
+    function deleteTask(id) {
+      state.tasks = state.tasks.filter(x => x.id !== id);
+      saveState(); renderDay();
+    }
+
+    // ================= 2. КАЛЕНДАРЬ (2026 - СЕНТ 2027) =================
+    function initCalSelect() {
+      const sel = document.getElementById('calMonthSelect');
+      sel.innerHTML = calMonths.map((m, i) => `<option value="${i}">${m.label}</option>`).join('');
+      sel.value = curCalIdx;
+    }
+    function changeCalMonth(dir) {
+      curCalIdx = Math.max(0, Math.min(calMonths.length - 1, curCalIdx + dir));
+      document.getElementById('calMonthSelect').value = curCalIdx;
+      renderCalendar();
+    }
+    function onCalSelectChange() {
+      curCalIdx = parseInt(document.getElementById('calMonthSelect').value, 10);
+      renderCalendar();
+    }
+
+    function renderCalendar() {
+      const { year, month, label } = calMonths[curCalIdx];
+      const grid = document.getElementById('calGrid');
+      grid.innerHTML = '';
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const offset = (firstDay === 0) ? 6 : firstDay - 1;
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      for (let i = 0; i < offset; i++) grid.appendChild(document.createElement('div'));
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+        const info = state.calendar[dateKey] || {};
+        const hasMed = state.me.med.some(m => m.date === dateKey);
+        const habitsCount = state.habits.filter(h => h.days && h.days[dateKey]).length;
+
+        const cell = document.createElement('div');
+        cell.className = 'cal-day' + (info.type ? ` day-${info.type}` : '') + (selectedCalDate === dateKey ? ' selected' : '');
+        cell.onclick = () => selectCalDate(dateKey);
+        cell.innerHTML = `
+          <span>${d}</span>
+          ${info.note ? `<span class="cal-day-note">${info.note}</span>` : ''}
+          <div class="cal-dots">
+            ${hasMed ? '<span>💊</span>' : ''}
+            ${habitsCount > 0 ? '<span>✨</span>' : ''}
+          </div>
+        `;
+        grid.appendChild(cell);
+      }
+
+      // Настройка редактора выбранного дня
+      const selInfo = state.calendar[selectedCalDate] || {};
+      document.getElementById('selectedDateTitle').textContent = `Дата: ${selectedCalDate}`;
+      document.getElementById('calDayType').value = selInfo.type || '';
+      document.getElementById('calDayNote').value = selInfo.note || '';
+
+      const meds = state.me.med.filter(m => m.date === selectedCalDate);
+      const doneHabits = state.habits.filter(h => h.days && h.days[selectedCalDate]);
+      let detailsHtml = '';
+      if (selInfo.income) detailsHtml += `<div>💰 Заработано за смену: <strong>${selInfo.income} ₽</strong></div>`;
+      if (meds.length) detailsHtml += `<div>💊 Лечение: <strong>${meds.map(m => m.title).join(', ')}</strong></div>`;
+      if (doneHabits.length) detailsHtml += `<div>✨ Выполнены привычки: <strong>${doneHabits.map(h => h.title).join(', ')}</strong></div>`;
+      document.getElementById('calDayDetails').innerHTML = detailsHtml || 'На этот день пока нет дополнительных записей.';
+    }
+
+    function selectCalDate(dateKey) {
+      selectedCalDate = dateKey;
+      const info = state.calendar[dateKey];
+      if (info && ['study','work','both','rest'].includes(info.type)) {
+        state.todayMode = info.type;
+      }
+      renderCalendar();
+      renderDay();
+      renderHabits();
+    }
+
+    function saveCalDay() {
+      const type = document.getElementById('calDayType').value;
+      const note = document.getElementById('calDayNote').value.trim();
+      const prevIncome = (state.calendar[selectedCalDate] && state.calendar[selectedCalDate].income) || 0;
+      state.calendar[selectedCalDate] = { type, note, income: prevIncome };
+      if (['study','work','both','rest'].includes(type)) state.todayMode = type;
+      saveState(); renderCalendar(); renderDay();
+      showToast('Отметка дня сохранена в календаре 🗓');
+    }
+
+    function clearCalDay() {
+      delete state.calendar[selectedCalDate];
+      saveState(); renderCalendar();
+      showToast('День очищен');
+    }
+
+    // ================= 3. УЧЁБА (ХИМИЯ, БИОЛОГИЯ, АНГЛИЙСКИЙ) =================
+    const subjNames = {
+      chem: '🧪 Химия ЕГЭ',
+      bio: '🧬 Биология ЕГЭ',
+      eng: '🇬🇧 Английский ЕГЭ'
+    };
+
+    function switchStudySubject(subj, btn) {
+      currentStudySubj = subj;
+      btn.parentElement.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderStudy();
+    }
+
+    function renderStudy() {
+      const data = state.study[currentStudySubj];
+      document.getElementById('studySubjTitle').textContent = `Кодификатор: ${subjNames[currentStudySubj]}`;
+      document.getElementById('studyNotesTitle').textContent = currentStudySubj === 'eng'
+        ? '🇬🇧 Словарь, Phrasal Verbs и клише для Эссе/Устной части'
+        : '💡 Сложные реакции, алгоритмы и мои ловушки';
+
+      // Темы
+      const tBox = document.getElementById('studyTopicsList');
+      tBox.innerHTML = '';
+      let totalSteps = data.topics.length * 3;
+      let doneSteps = 0;
+
+      data.topics.forEach(t => {
+        if (t.s1) doneSteps++; if (t.s2) doneSteps++; if (t.s3) doneSteps++;
+        const item = document.createElement('div');
+        item.className = 'list-item';
+        item.style.flexDirection = 'column';
+        item.style.alignItems = 'stretch';
+        item.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <strong style="font-size:14px;">${t.title}</strong>
+            <button class="del-btn" onclick="deleteStudyTopic(${t.id})">×</button>
+          </div>
+          <div class="step-pills" style="margin-top:6px;">
+            <button class="step-pill ${t.s1 ? 'done' : ''}" onclick="toggleStudyStep(${t.id}, 's1')">1. Теория</button>
+            <button class="step-pill ${t.s2 ? 'done' : ''}" onclick="toggleStudyStep(${t.id}, 's2')">2. Практика</button>
+            <button class="step-pill ${t.s3 ? 'done' : ''}" onclick="toggleStudyStep(${t.id}, 's3')">3. Повторено</button>
+          </div>
+        `;
+        tBox.appendChild(item);
+      });
+      const pct = totalSteps ? Math.round((doneSteps / totalSteps) * 100) : 0;
+      document.getElementById('studySubjProgress').textContent = `${pct}% освоено`;
+
+      // Ловушки / Словарь
+      const trBox = document.getElementById('studyTrapsList');
+      trBox.innerHTML = data.traps.map(tr => `
+        <div class="comment-box">
+          <div><strong>${tr.term}</strong> — ${tr.desc}</div>
+          <button class="del-btn" onclick="deleteStudyTrap(${tr.id})">×</button>
+        </div>
+      `).join('');
+
+      // Пробники
+      const mBox = document.getElementById('studyMocksList');
+      mBox.innerHTML = data.mocks.map(m => `
+        <div class="comment-box">
+          <div>
+            <div style="font-size:11px; color:var(--text-muted);">${m.date} • <strong>${m.score} баллов</strong></div>
+            <div>${m.comment}</div>
+          </div>
+          <button class="del-btn" onclick="deleteStudyMock(${m.id})">×</button>
+        </div>
+      `).join('');
+    }
+
+    function addStudyTopic() {
+      const inp = document.getElementById('newStudyTopic');
+      if (!inp.value.trim()) return;
+      state.study[currentStudySubj].topics.push({ id: Date.now(), title: inp.value.trim(), s1: false, s2: false, s3: false });
+      inp.value = ''; saveState(); renderStudy();
+    }
+    function toggleStudyStep(id, step) {
+      const t = state.study[currentStudySubj].topics.find(x => x.id === id);
+      if (t) t[step] = !t[step];
+      saveState(); renderStudy();
+    }
+    function deleteStudyTopic(id) {
+      state.study[currentStudySubj].topics = state.study[currentStudySubj].topics.filter(x => x.id !== id);
+      saveState(); renderStudy();
+    }
+    function addStudyTrap() {
+      const term = document.getElementById('trapTerm');
+      const desc = document.getElementById('trapDesc');
+      if (!term.value.trim()) return;
+      state.study[currentStudySubj].traps.push({ id: Date.now(), term: term.value.trim(), desc: desc.value.trim() });
+      term.value = ''; desc.value = ''; saveState(); renderStudy();
+    }
+    function deleteStudyTrap(id) {
+      state.study[currentStudySubj].traps = state.study[currentStudySubj].traps.filter(x => x.id !== id);
+      saveState(); renderStudy();
+    }
+    function addStudyMock() {
+      const sc = document.getElementById('mockScore');
+      const cm = document.getElementById('mockComment');
+      if (!sc.value) return;
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.study[currentStudySubj].mocks.unshift({ id: Date.now(), date: d, score: parseInt(sc.value, 10), comment: cm.value.trim() });
+      sc.value = ''; cm.value = ''; saveState(); renderStudy();
+    }
+    function deleteStudyMock(id) {
+      state.study[currentStudySubj].mocks = state.study[currentStudySubj].mocks.filter(x => x.id !== id);
+      saveState(); renderStudy();
+    }
+
+    // ================= 4. КОШЕЛЁК =================
+    function promptEditBalance() {
+      const newCard = prompt('Введи сумму НА КАРТЕ (₽):', state.wallet.card);
+      if (newCard !== null && !isNaN(parseFloat(newCard))) state.wallet.card = parseFloat(newCard);
+      const newCash = prompt('Введи сумму НАЛИЧНЫМИ (₽):', state.wallet.cash);
+      if (newCash !== null && !isNaN(parseFloat(newCash))) state.wallet.cash = parseFloat(newCash);
+      saveState(); renderWallet();
+    }
+
+    function renderWallet() {
+      const total = (state.wallet.card || 0) + (state.wallet.cash || 0);
+      document.getElementById('walletTotalDisplay').textContent = total.toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('walletCardDisplay').textContent = (state.wallet.card || 0).toLocaleString('ru-RU') + ' ₽';
+      document.getElementById('walletCashDisplay').textContent = (state.wallet.cash || 0).toLocaleString('ru-RU') + ' ₽';
+
+      // Расходы
+      document.getElementById('expensesList').innerHTML = state.wallet.expenses.map(e => `
+        <div class="list-item">
+          <div>
+            <strong>${e.title}</strong> • <span style="color:var(--danger); font-weight:700;">-${e.amount} ₽</span>
+            <div style="font-size:11px; color:var(--text-muted);">${e.source === 'card' ? '💳 С карты' : '💵 Наличные'} • ${e.date}</div>
+          </div>
+          <button class="del-btn" onclick="deleteExpense(${e.id})">×</button>
+        </div>
+      `).join('') || '<div style="font-size:13px; color:var(--text-muted);">Пока нет записей о расходах</div>';
+
+      // Копилки (до 20)
+      document.getElementById('piggyCountBadge').textContent = `${state.wallet.piggy.length} / 20`;
+      document.getElementById('piggyList').innerHTML = state.wallet.piggy.map(p => {
+        const pct = p.target ? Math.min(100, Math.round((p.saved / p.target) * 100)) : 0;
+        return `
+          <div style="padding:13px; background:var(--surface-soft); border-radius:16px; margin-bottom:10px;">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+              <strong>🐷 ${p.name}</strong>
+              <div style="display:flex; align-items:center; gap:6px;">
+                <span class="badge">${p.saved.toLocaleString('ru-RU')} / ${p.target.toLocaleString('ru-RU')} ₽ (${pct}%)</span>
+                <button class="del-btn" onclick="deletePiggy(${p.id})">×</button>
+              </div>
+            </div>
+            <div class="progress-wrap"><div class="progress-fill" style="width:${pct}%"></div></div>
+            <div class="input-row" style="margin-top:6px;">
+              <input type="number" id="piggyAddAmt-${p.id}" placeholder="Сумма пополнения (₽)">
+              <select id="piggyAddSrc-${p.id}">
+                <option value="card">💳 С карты</option>
+                <option value="cash">💵 С наличных</option>
+              </select>
+              <button class="btn" onclick="topUpPiggy(${p.id})">+ В копилку</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Долги (до 20)
+      document.getElementById('debtsCountBadge').textContent = `${state.wallet.debts.length} / 20`;
+      document.getElementById('debtsList').innerHTML = state.wallet.debts.map(d => `
+        <div class="list-item">
+          <div>
+            <strong>${d.who}</strong> — <span style="color:var(--danger); font-weight:700;">${d.sum} ₽</span>
+            <div style="font-size:12px; color:var(--text-muted);">${d.note || 'Без комментария'}</div>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn-soft" onclick="payDebt(${d.id}, 'card')" title="Вернуть с карты">💳</button>
+            <button class="btn-soft" onclick="payDebt(${d.id}, 'cash')" title="Вернуть наличными">💵</button>
+            <button class="del-btn" onclick="deleteDebt(${d.id})">×</button>
+          </div>
+        </div>
+      `).join('') || '<div style="font-size:13px; color:var(--text-muted);">Долгов нет! 🎉</div>';
+
+      // Запланированное
+      const planSum = state.wallet.planned.reduce((acc, x) => acc + (x.est || 0), 0);
+      document.getElementById('plannedTotalBadge').textContent = `Итого примерно: ${planSum.toLocaleString('ru-RU')} ₽`;
+      document.getElementById('plannedList').innerHTML = state.wallet.planned.map(pl => `
+        <div class="list-item">
+          <div><strong>${pl.title}</strong> • <span style="color:var(--primary); font-weight:700;">~${pl.est} ₽</span></div>
+          <button class="del-btn" onclick="deletePlanned(${pl.id})">×</button>
+        </div>
+      `).join('');
+    }
+
+    function addExpense() {
+      const title = document.getElementById('expTitle').value.trim();
+      const amount = parseFloat(document.getElementById('expAmount').value);
+      const source = document.getElementById('expSource').value;
+      if (!title || isNaN(amount) || amount <= 0) return;
+
+      if (source === 'card') state.wallet.card -= amount;
+      else state.wallet.cash -= amount;
+
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.wallet.expenses.unshift({ id: Date.now(), title, amount, source, date: d });
+      document.getElementById('expTitle').value = '';
+      document.getElementById('expAmount').value = '';
+      saveState(); renderWallet();
+      showToast(`Списано ${amount} ₽ (${source === 'card' ? 'Карта' : 'Наличные'})`);
+    }
+    function deleteExpense(id) {
+      state.wallet.expenses = state.wallet.expenses.filter(x => x.id !== id);
+      saveState(); renderWallet();
+    }
+
+    function addPiggy() {
+      if (state.wallet.piggy.length >= 20) return showToast('Максимум 20 копилок');
+      const name = document.getElementById('newPiggyName').value.trim();
+      const target = parseFloat(document.getElementById('newPiggyTarget').value) || 0;
+      const saved = parseFloat(document.getElementById('newPiggyInitial').value) || 0;
+      if (!name || target <= 0) return;
+      state.wallet.piggy.push({ id: Date.now(), name, target, saved });
+      document.getElementById('newPiggyName').value = '';
+      document.getElementById('newPiggyTarget').value = '';
+      document.getElementById('newPiggyInitial').value = '';
+      saveState(); renderWallet();
+    }
+    function topUpPiggy(id) {
+      const p = state.wallet.piggy.find(x => x.id === id);
+      const amt = parseFloat(document.getElementById('piggyAddAmt-' + id).value);
+      const src = document.getElementById('piggyAddSrc-' + id).value;
+      if (!p || isNaN(amt) || amt <= 0) return;
+
+      if (src === 'card') state.wallet.card -= amt;
+      else state.wallet.cash -= amt;
+      p.saved += amt;
+      saveState(); renderWallet();
+      showToast(`🐷 +${amt} ₽ переведено в копилку «${p.name}»!`);
+    }
+    function deletePiggy(id) {
+      state.wallet.piggy = state.wallet.piggy.filter(x => x.id !== id);
+      saveState(); renderWallet();
+    }
+
+    function addDebt() {
+      if (state.wallet.debts.length >= 20) return showToast('Максимум 20 записей долгов');
+      const who = document.getElementById('debtWho').value.trim();
+      const sum = parseFloat(document.getElementById('debtSum').value);
+      const note = document.getElementById('debtNote').value.trim();
+      if (!who || isNaN(sum)) return;
+      state.wallet.debts.push({ id: Date.now(), who, sum, note });
+      document.getElementById('debtWho').value = '';
+      document.getElementById('debtSum').value = '';
+      document.getElementById('debtNote').value = '';
+      saveState(); renderWallet();
+    }
+    function payDebt(id, src) {
+      const d = state.wallet.debts.find(x => x.id === id);
+      if (!d) return;
+      if (src === 'card') state.wallet.card -= d.sum;
+      else state.wallet.cash -= d.sum;
+      state.wallet.debts = state.wallet.debts.filter(x => x.id !== id);
+      saveState(); renderWallet();
+      showToast(`Долг (${d.sum} ₽) закрыт и вычтен из баланса!`);
+    }
+    function deleteDebt(id) {
+      state.wallet.debts = state.wallet.debts.filter(x => x.id !== id);
+      saveState(); renderWallet();
+    }
+
+    function addPlannedItem() {
+      const title = document.getElementById('planTitle').value.trim();
+      const est = parseFloat(document.getElementById('planEst').value) || 0;
+      if (!title) return;
+      state.wallet.planned.push({ id: Date.now(), title, est });
+      document.getElementById('planTitle').value = '';
+      document.getElementById('planEst').value = '';
+      saveState(); renderWallet();
+    }
+    function deletePlanned(id) {
+      state.wallet.planned = state.wallet.planned.filter(x => x.id !== id);
+      saveState(); renderWallet();
+    }
+
+    // ================= 5. ТРЕНИРОВКИ =================
+    function selectWorkoutPreset(label, mins) {
+      document.getElementById('spWorkType').value = label;
+      document.getElementById('spWorkMin').value = mins;
+    }
+    function addSportLog(cat, minId, noteId) {
+      const min = parseInt(document.getElementById(minId).value, 10) || 15;
+      const note = document.getElementById(noteId).value.trim();
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.sport.unshift({ id: Date.now(), cat, min, km: 0, note, date: d });
+      document.getElementById(minId).value = '';
+      document.getElementById(noteId).value = '';
+      saveState(); renderSport();
+      showToast(`Записано: ${cat} (${min} мин) 💪`);
+    }
+    function addTreadmillLog() {
+      const min = parseInt(document.getElementById('spTreadMin').value, 10) || 30;
+      const km = parseFloat(document.getElementById('spTreadKm').value) || 0;
+      const note = document.getElementById('spTreadNote').value.trim();
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.sport.unshift({ id: Date.now(), cat: 'Дорожка', min, km, note: `${km} км • ${note}`, date: d });
+      document.getElementById('spTreadMin').value = '';
+      document.getElementById('spTreadKm').value = '';
+      document.getElementById('spTreadNote').value = '';
+      saveState(); renderSport();
+      showToast('Пробежка/ходьба сохранена 🏃‍♀️');
+    }
+    function addWorkoutPresetLog() {
+      const type = document.getElementById('spWorkType').value.trim() || 'Тренировка';
+      const min = parseInt(document.getElementById('spWorkMin').value, 10) || 45;
+      const note = document.getElementById('spWorkNote').value.trim();
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.sport.unshift({ id: Date.now(), cat: type, min, km: 0, note, date: d });
+      document.getElementById('spWorkNote').value = '';
+      saveState(); renderSport();
+      showToast(`Тренировка «${type}» сохранена!`);
+    }
+    function deleteSportLog(id) {
+      state.sport = state.sport.filter(x => x.id !== id);
+      saveState(); renderSport();
+    }
+    function renderSport() {
+      document.getElementById('sportLogsList').innerHTML = state.sport.map(s => `
+        <div class="list-item">
+          <div>
+            <strong>${s.cat}</strong> • <span style="color:var(--primary); font-weight:700;">${s.min} мин</span>
+            <span style="font-size:11px; color:var(--text-muted);">(${s.date})</span>
+            <div style="font-size:12px; color:var(--text-muted);">${s.note || ''}</div>
+          </div>
+          <button class="del-btn" onclick="deleteSportLog(${s.id})">×</button>
+        </div>
+      `).join('');
+    }
+
+    // ================= 6. ТРЕКЕР ПРИВЫЧЕК =================
+    function filterHabits(cat, btn) {
+      currentHabitFilter = cat;
+      btn.parentElement.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderHabits();
+    }
+    function renderHabits() {
+      document.getElementById('habitDateBadge').textContent = `Дата: ${selectedCalDate}`;
+      const list = state.habits.filter(h => currentHabitFilter === 'all' || h.cat === currentHabitFilter);
+      document.getElementById('habitsList').innerHTML = list.map(h => {
+        const doneToday = !!(h.days && h.days[selectedCalDate]);
+        const totalDays = h.days ? Object.keys(h.days).length : 0;
+        return `
+          <div class="list-item">
+            <div class="item-left" onclick="toggleHabitDay(${h.id})">
+              <div class="checkbox ${doneToday ? 'checked' : ''}">${doneToday ? '✓' : ''}</div>
+              <div>
+                <div style="font-weight:700; font-size:14px;">${h.title}</div>
+                <div style="font-size:11px; color:var(--text-muted);">${h.cat} • В копилке дней: ${totalDays} 🌱</div>
+              </div>
+            </div>
+            <button class="del-btn" onclick="deleteHabit(${h.id})">×</button>
+          </div>
+        `;
+      }).join('');
+    }
+    function addHabit() {
+      const inp = document.getElementById('newHabitTitle');
+      const cat = document.getElementById('newHabitCat').value;
+      if (!inp.value.trim()) return;
+      state.habits.push({ id: Date.now(), title: inp.value.trim(), cat, days: {} });
+      inp.value = ''; saveState(); renderHabits();
+    }
+    function toggleHabitDay(id) {
+      const h = state.habits.find(x => x.id === id);
+      if (!h) return;
+      if (!h.days) h.days = {};
+      if (h.days[selectedCalDate]) delete h.days[selectedCalDate];
+      else h.days[selectedCalDate] = true;
+      saveState(); renderHabits(); renderCalendar();
+    }
+    function deleteHabit(id) {
+      state.habits = state.habits.filter(x => x.id !== id);
+      saveState(); renderHabits(); renderCalendar();
+    }
+
+    // ================= 7. КНИГИ (3 ВКЛАДКИ) =================
+    const bookTabTitles = {
+      reading: '📖 Читаю сейчас',
+      read: '✅ Прочитанные книги',
+      want: '🔖 Хочу прочитать'
+    };
+    function switchBookTab(tab, btn) {
+      currentBookTab = tab;
+      btn.parentElement.querySelectorAll('.subtab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('bookTabHeading').textContent = bookTabTitles[tab];
+      renderBooks();
+    }
+    function renderBooks() {
+      const books = state.books.filter(b => b.status === currentBookTab);
+      const box = document.getElementById('booksListContainer');
+      box.innerHTML = books.map(b => {
+        const pct = b.totalPages ? Math.min(100, Math.round((b.curPage / b.totalPages) * 100)) : 0;
+        return `
+          <div style="padding:14px; background:var(--surface-soft); border-radius:16px; margin-bottom:12px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+              <strong>${b.title}</strong>
+              <div style="display:flex; gap:6px; align-items:center;">
+                <span class="badge">${b.curPage} / ${b.totalPages} стр. (${pct}%)</span>
+                <button class="del-btn" onclick="deleteBook(${b.id})">×</button>
+              </div>
+            </div>
+            <div class="progress-wrap"><div class="progress-fill" style="width:${pct}%"></div></div>
+            <div class="input-row" style="margin-top:8px;">
+              <input type="number" value="${b.curPage}" placeholder="Стр. сейчас" style="max-width:120px;" onchange="updateBookPage(${b.id}, this.value)">
+              <input type="text" id="bNoteInp-${b.id}" placeholder="Цитата или мысль по книге...">
+              <button class="btn" onclick="addBookNote(${b.id})">💬</button>
+              ${b.status !== 'read' ? `<button class="btn-soft" onclick="moveBookStatus(${b.id}, 'read')">✅ Дочитала</button>` : ''}
+              ${b.status === 'want' ? `<button class="btn-soft" onclick="moveBookStatus(${b.id}, 'reading')">📖 Начать</button>` : ''}
+            </div>
+            <div>
+              ${(b.notes || []).map(n => `
+                <div class="comment-box" style="background:var(--surface-solid);">
+                  <div><span style="font-size:11px; color:var(--text-muted);">Стр. ${n.page}:</span> ${n.text}</div>
+                  <button class="del-btn" onclick="deleteBookNote(${b.id}, ${n.id})">×</button>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }).join('') || '<div style="font-size:13px; color:var(--text-muted);">В этом разделе пока нет книг</div>';
+    }
+    function addBook() {
+      const title = document.getElementById('newBookTitle').value.trim();
+      const totalPages = parseInt(document.getElementById('newBookTotalPages').value, 10) || 300;
+      if (!title) return;
+      state.books.push({
+        id: Date.now(), status: currentBookTab, title,
+        curPage: currentBookTab === 'read' ? totalPages : 0,
+        totalPages, notes: []
+      });
+      document.getElementById('newBookTitle').value = '';
+      document.getElementById('newBookTotalPages').value = '';
+      saveState(); renderBooks();
+    }
+    function updateBookPage(id, val) {
+      const b = state.books.find(x => x.id === id);
+      if (b) b.curPage = Math.max(0, parseInt(val, 10) || 0);
+      saveState(); renderBooks();
+    }
+    function moveBookStatus(id, st) {
+      const b = state.books.find(x => x.id === id);
+      if (b) {
+        b.status = st;
+        if (st === 'read') b.curPage = b.totalPages;
+      }
+      saveState(); renderBooks();
+    }
+    function addBookNote(bookId) {
+      const b = state.books.find(x => x.id === bookId);
+      const inp = document.getElementById('bNoteInp-' + bookId);
+      if (!b || !inp.value.trim()) return;
+      b.notes.unshift({ id: Date.now(), page: b.curPage, text: inp.value.trim() });
+      inp.value = ''; saveState(); renderBooks();
+    }
+    function deleteBookNote(bookId, noteId) {
+      const b = state.books.find(x => x.id === bookId);
+      if (b) b.notes = b.notes.filter(n => n.id !== noteId);
+      saveState(); renderBooks();
+    }
+    function deleteBook(id) {
+      state.books = state.books.filter(x => x.id !== id);
+      saveState(); renderBooks();
+    }
+
+    // ================= 8. Я (ВОЛОСЫ, ЛЕЧЕНИЕ, ЦЕЛИ) =================
+    function renderMe() {
+      // Волосы
+      document.getElementById('hairList').innerHTML = state.me.hair.map(h => `
+        <div class="list-item ${h.done ? 'done' : ''}">
+          <div class="item-left" onclick="toggleHair(${h.id})">
+            <div class="checkbox ${h.done ? 'checked' : ''}">${h.done ? '✓' : ''}</div>
+            <span class="item-title" style="font-weight:600; font-size:14px;">${h.text}</span>
+          </div>
+          <button class="del-btn" onclick="deleteHair(${h.id})">×</button>
+        </div>
+      `).join('');
+
+      // Лечение
+      document.getElementById('medList').innerHTML = state.me.med.map(m => `
+        <div class="list-item ${m.done ? 'done' : ''}">
+          <div class="item-left" onclick="toggleMed(${m.id})">
+            <div class="checkbox ${m.done ? 'checked' : ''}">${m.done ? '✓' : ''}</div>
+            <div>
+              <div class="item-title" style="font-weight:700; font-size:14px;">💊 ${m.title}</div>
+              <div style="font-size:11px; color:var(--text-muted);">Дата в календаре: ${m.date}</div>
+            </div>
+          </div>
+          <button class="del-btn" onclick="deleteMed(${m.id})">×</button>
+        </div>
+      `).join('');
+
+      // Цели
+      document.getElementById('goalsList').innerHTML = state.me.goals.map(g => `
+        <div class="list-item ${g.done ? 'done' : ''}">
+          <div class="item-left" onclick="toggleGoal(${g.id})">
+            <div class="checkbox ${g.done ? 'checked' : ''}">${g.done ? '✓' : ''}</div>
+            <div>
+              <div class="item-title" style="font-weight:700; font-size:14px;">${g.title}</div>
+              <div style="font-size:11px; color:var(--primary); font-weight:600;">${g.cat}</div>
+            </div>
+          </div>
+          <button class="del-btn" onclick="deleteGoal(${g.id})">×</button>
+        </div>
+      `).join('');
+    }
+
+    function addHairItem() {
+      const inp = document.getElementById('newHairItem');
+      if (!inp.value.trim()) return;
+      state.me.hair.push({ id: Date.now(), text: inp.value.trim(), done: false });
+      inp.value = ''; saveState(); renderMe();
+    }
+    function toggleHair(id) {
+      const h = state.me.hair.find(x => x.id === id);
+      if (h) h.done = !h.done;
+      saveState(); renderMe();
+    }
+    function deleteHair(id) {
+      state.me.hair = state.me.hair.filter(x => x.id !== id);
+      saveState(); renderMe();
+    }
+
+    function addMedItem() {
+      const title = document.getElementById('newMedTitle').value.trim();
+      const date = document.getElementById('newMedDate').value || selectedCalDate;
+      if (!title) return;
+      state.me.med.push({ id: Date.now(), title, date, done: false });
+      document.getElementById('newMedTitle').value = '';
+      saveState(); renderMe(); renderCalendar(); renderDay();
+      showToast('💊 Добавлено в Лечение и синхронизировано с Календарём!');
+    }
+    function toggleMed(id) {
+      const m = state.me.med.find(x => x.id === id);
+      if (m) m.done = !m.done;
+      saveState(); renderMe(); renderDay();
+    }
+    function deleteMed(id) {
+      state.me.med = state.me.med.filter(x => x.id !== id);
+      saveState(); renderMe(); renderCalendar(); renderDay();
+    }
+
+    function addGoalItem() {
+      const title = document.getElementById('newGoalTitle').value.trim();
+      const cat = document.getElementById('newGoalCat').value;
+      if (!title) return;
+      state.me.goals.push({ id: Date.now(), title, cat, done: false });
+      document.getElementById('newGoalTitle').value = '';
+      saveState(); renderMe();
+    }
+    function toggleGoal(id) {
+      const g = state.me.goals.find(x => x.id === id);
+      if (g) g.done = !g.done;
+      saveState(); renderMe();
+    }
+    function deleteGoal(id) {
+      state.me.goals = state.me.goals.filter(x => x.id !== id);
+      saveState(); renderMe();
+    }
+
+    // ================= 9. ИТОГИ И ОТЧЁТЫ =================
+    function renderStats() {
+      // Учёба
+      const allTopics = [...state.study.chem.topics, ...state.study.bio.topics, ...state.study.eng.topics];
+      const fullyMastered = allTopics.filter(t => t.s1 && t.s2 && t.s3).length;
+      document.getElementById('statBoxStudy').innerHTML = `
+        <div class="card-title">📚 Сводка по ЕГЭ (Химия, Биология, Английский)</div>
+        <p style="margin-top:8px; font-size:14px;">Всего тем в плане: <strong>${allTopics.length}</strong> • Полностью закрыто (3/3 шага): <strong>${fullyMastered}</strong></p>
+        <p style="font-size:14px;">Написано пробников: <strong>${state.study.chem.mocks.length + state.study.bio.mocks.length + state.study.eng.mocks.length}</strong></p>
+      `;
+
+      // Работа
+      document.getElementById('statBoxWork').innerHTML = `
+        <div class="card-title">☕ Сводка по рабочим сменам</div>
+        <p style="margin-top:8px; font-size:14px;">Закрыто смен: <strong>${state.wallet.shiftsCompleted || 0}</strong></p>
+        <p style="font-size:14px;">Всего заработано со смен: <strong>${(state.wallet.totalShiftEarned || 0).toLocaleString('ru-RU')} ₽</strong></p>
+      `;
+
+      // Спорт
+      const totalSportMin = state.sport.reduce((a, b) => a + (b.min || 0), 0);
+      const totalKm = state.sport.reduce((a, b) => a + (b.km || 0), 0).toFixed(1);
+      document.getElementById('statBoxSport').innerHTML = `
+        <div class="card-title">🧘‍♀️ Сводка по тренировкам и спине</div>
+        <p style="margin-top:8px; font-size:14px;">Всего занятий: <strong>${state.sport.length}</strong> • Общее время: <strong>${totalSportMin} мин</strong></p>
+        <p style="font-size:14px;">Пройдено на беговой дорожке: <strong>${totalKm} км</strong></p>
+      `;
+
+      // Книги
+      const readCount = state.books.filter(b => b.status === 'read').length;
+      const readingCount = state.books.filter(b => b.status === 'reading').length;
+      document.getElementById('statBoxBooks').innerHTML = `
+        <div class="card-title">📖 Книжная статистика</div>
+        <p style="margin-top:8px; font-size:14px;">Прочитано книг: <strong>${readCount}</strong> • Читаю сейчас: <strong>${readingCount}</strong></p>
+      `;
+
+      // Отчёты
+      document.getElementById('reportsList').innerHTML = state.reports.map(r => `
+        <div class="comment-box">
+          <div>
+            <div style="font-size:11px; color:var(--text-muted);">${r.cat} • ${r.date}</div>
+            <div style="font-weight:700; margin:2px 0;">${r.title}</div>
+            <div>${r.text}</div>
+          </div>
+          <button class="del-btn" onclick="deleteReport(${r.id})">×</button>
+        </div>
+      `).join('');
+    }
+
+    function addReport() {
+      const cat = document.getElementById('repCat').value;
+      const title = document.getElementById('repTitle').value.trim();
+      const text = document.getElementById('repText').value.trim();
+      if (!title && !text) return;
+      const d = new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'short' });
+      state.reports.unshift({ id: Date.now(), cat, title: title || 'Итог', text, date: d });
+      document.getElementById('repTitle').value = '';
+      document.getElementById('repText').value = '';
+      saveState(); renderStats();
+      showToast('Отчёт сохранён 📊');
+    }
+    function deleteReport(id) {
+      state.reports = state.reports.filter(x => x.id !== id);
+      saveState(); renderStats();
+    }
+
+    // ================= ТАЙМЕР ПОМОДОРО =================
+    let pomoSec = 25 * 60;
+    let pomoTimer = null;
+    function togglePomo() {
+      if (pomoTimer) {
+        clearInterval(pomoTimer);
+        pomoTimer = null;
+        showToast('Таймер на паузе ⏸');
+      } else {
+        showToast('Таймер запущен! 25 минут фокуса 🍅');
+        pomoTimer = setInterval(() => {
+          if (pomoSec > 0) {
+            pomoSec--;
+            const m = String(Math.floor(pomoSec / 60)).padStart(2, '0');
+            const s = String(pomoSec % 60).padStart(2, '0');
+            document.getElementById('pomoTime').textContent = `${m}:${s}`;
+          } else {
+            clearInterval(pomoTimer);
+            pomoTimer = null;
+            pomoSec = 25 * 60;
+            showToast('🍅 Время вышло! Сделай разминку для спины ✨');
+          }
+        }, 1000);
+      }
+    }
+
+    // ================= ИНИЦИАЛИЗАЦИЯ =================
+    function renderAll() {
+      renderDay();
+      renderCalendar();
+      renderStudy();
+      renderWallet();
+      renderSport();
+      renderHabits();
+      renderBooks();
+      renderMe();
+      renderStats();
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      setTheme(state.theme || 'blush');
+      initCalSelect();
+      document.getElementById('newMedDate').value = selectedCalDate;
+      renderAll();
+    });
+  </script>
+</body>
+</html>
